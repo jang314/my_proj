@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 회원가입 양식 */
+table.m_table{
+    width:90%;
+    text-align: left;
+    font-family: 나눔스퀘어;
+    border: 0px solid #ccc;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+table.m_table caption{
+	color: #353535;
+	font-family: 나눔스퀘어;
+	font-size: 37px;
+	text-align: left;
+}
+
+table.m_table th{
+	width: 300px;
+    padding: 10px;
+    font-family: 나눔스퀘어;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #efefef;
+}
+
+table.m_table  td{
+	padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 로그인 테이블 */
+table.login_table{
+    width:30%;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    font-family: 나눔스퀘어;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
+table.login_table caption{
+	color: #353535;
+	font-family: 나눔스퀘어;
+	font-size: 37px;
+	text-align: center;
+}
+
+table.login_table  td{
+	padding: 10px;
+    vertical-align: top;
+}
+
+table.login_table  input[type="text"], table.login_table input[type="password"]{
+	height: auto; /* 높이 초기화 */ 
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	line-height: normal; /* line-height 초기화 */ 
+	padding: .8em .5em; /* 여백 설정 */
+	width: 93%;
+}
+
+table.login_table input[type="submit"]{
+	border:0;
+	border-radius: 2px;
+	font-family: 나눔스퀘어;
+	color: white;
+	font-size: 13px;
+	background: black;
+	width: 95%;
+    height: 50px;
+	cursor: pointer;
+}
+
+.buttons{
+	width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+

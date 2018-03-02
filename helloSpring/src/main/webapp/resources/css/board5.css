@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+/* 게시판 목록 */
+table.list_table {
+	padding-top: 100px;
+	width:90%;
+	margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔스퀘어;
+    line-height: 1.5;
+    border: 0px solid #ccc;
+}
+
+table.list_table caption{
+	height: 50px;
+	margin-bottom: 20px;
+	font-size: 30px;
+	font-family: 배달의민족 한나는 열한살;
+	padding-left: 5px;
+}
+
+table.list_table th{
+	color: white;
+	font-weight: bold
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    background: #353535;
+    border-bottom: 1px solid #ccc;
+}
+
+.upload{
+	font-family: 나눔스퀘어;
+	width: 90%;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.notice{
+	background: #EAEAEA;
+	width: 350px;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+/* 검색창 */
+.searchbox{
+	width:100%;
+	margin: 0  auto;
+	padding:20px;
+}
+
+/* 페이지 */
+.pg_btn{
+	border:0;
+	font-weight: bold;
+	font-family: 나눔스퀘어;
+	color: black;
+	font-size: 13px;
+	background: none;
+	width: 40px;
+    height: 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+}
+
+.pg_btn[disabled='disabled']{
+	cursor:default; 
+	color:gray; 
+	text-decoration: none; 
+	font-size: 10px; 
+	font-weight: normal;
+}
+
+/* 게시판 입력폼 */
+table.board_form{
+	width: 60%;
+	border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+table.board_form caption{
+	text-align:left;
+	height: 50px;
+	font-size: 20px;
+	font-family: 배달의민족 한나는 열한살;
+	padding-left: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+table.board_form th{
+	width: 250px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #efefef;
+    font-family: 나눔바른고딕;
+}
+
+table.board_form td{
+	width: 250px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    font-family: 나눔바른고딕;
+}
+
+table.board_form img{
+	width: auto; 
+	height: auto;
+    max-width: 500px;
+    max-height: 500px;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+table.comment_form{
+	width:70%;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔바른고딕;
+    line-height: 1.5;
+    border: 0px solid #ccc;
+}
+
+table.comment_form tr{
+	width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    font-family: 나눔바른고딕;
+}
+
+.co_btn{
+	border:0;
+	font-family: 나눔스퀘어;
+	color: white;
+	font-size: 10px;
+	background: black;
+	width: 30px;
+    height: 20px;
+	cursor: pointer;
+}

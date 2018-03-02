@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javalec.ex.mapper.BoardMapper">
+
+<resultMap type="com.javalec.ex.model.MemberVO" id="MemberVO">
+	<result column="id" property="id"/>
+	<result column="password" property="password"/>
+	<result column="repassword" property="repassword"/>
+	<result column="name" property="name"/>
+	<result column="gender" property="gender"/>
+	<result column="email" property="email"/>
+	<result column="regdate" property="regdate"/>
+</resultMap>
+
+<resultMap type="com.javalec.ex.model.UploadComment" id="UploadComment">
+	<result column="no" property="no"/>
+	<result column="content" property="content"/>
+	<result column="uploadno" property="uploadno"/>
+	<result column="regdate" property="regdate"/>
+	<collection property="membervo" resultMap="MemberVO"/>
+</resultMap>
+
+<resultMap type="com.javalec.ex.model.UploadVO" id="UploadVO">
+	<result column="uploadno" property="uploadno"/>
+	<result column="title" property="title"/>
+	<result column="content" property="content"/>
+	<result column="notice" property="notice"/>
+	<result column="readcount" property="readcount"/>
+	<result column="regdate" property="regdate"/>
+	<collection property="membervo" resultMap="MemberVO" />
+	<collection property="comment" resultMap="UploadComment"/>
+</resultMap>
+
+<!-- 게시판 목록 -->
+<select id="selectList" parameterType="java.util.HashMap" resultType="com.javalec.ex.model.UploadVO" resultMap="UploadVO">
+		<include refid="pagingHeader"></include>
+					select * from upload u join members m on u.id = m.id 
+					<include refid="search"></include>
+					order by uploadno desc
+		<include refid="pagingFooter"></include>
+</select>
+
+<!-- 공지글 목록 -->
+<select id="selectNotice" resultType="com.javalec.ex.model.UploadVO" resultMap="UploadVO">
+		select * from upload u join members m on u.id = m.id where notice = 1 order by uploadno desc
+</select>
+
+<!-- 게시판 글의 총 개수 -->
+<select id="boardCount" parameterType="java.util.HashMap" resultType="int">
+		select count(*) from upload
+		<include refid="search"></include>
+</select>	
+
+<!-- 업로드 게시판 글 등록 -->	
+<insert id="insertUpload" parameterType="com.javalec.ex.model.UploadVO">
+		<selectKey keyProperty="uploadno" resultType="int" order="BEFORE">
+			select upload_seq.nextval from dual 
+		</selectKey>
+		insert into upload(uploadno, title, id, content, notice)
+		values(#{uploadno}, #{title}, #{membervo.id}, #{content}, #{notice})
+</insert>
+	
+<!-- 업로드 파일 등록 -->	
+<insert id="insertUploadFile" parameterType="com.javalec.ex.model.UploadFileVO">
+		insert into uploadFile(uploadfileno, savedfilename, userfilename, uploadno)
+		values(uploadfile_seq.nextval, #{savedfilename}, #{userfilename}, #{uploadno})
+</insert>
+
+<!-- 업로드 게시판 조회 -->
+<select id="selectByUploadNo" parameterType="int" resultType="com.javalec.ex.model.UploadVO" resultMap="UploadVO">
+		select * from upload u join members m on u.id = m.id where uploadno = #{uploadno}
+</select>
+
+<!-- 업로드 파일 조회(uploadno) -->
+<select id="selectByUploadFileNo" parameterType="int" resultType="com.javalec.ex.model.UploadFileVO">
+		select * from uploadfile where uploadno=#{uploadno}
+</select>
+
+<!-- 업로드 파일 조회 (uploadfileno) -->
+<select id="selectUploadFileByUploadFileNo" parameterType="int" resultType="com.javalec.ex.model.UploadFileVO">
+		select * from uploadfile where uploadfileno = #{uploadfileno}
+</select>
+
+<!-- 조회수 증가 -->
+<update id ="readCount" parameterType="int">
+		update upload set readcount = readcount + 1 where uploadno = #{uploadno}
+</update>
+
+<!-- 다운로드수 증가 -->
+<update id="updateDownloadCount" parameterType="int">
+		update uploadfile set downloadCount = downloadCount +1 where uploadfileno=#{uploadfileno}
+</update>
+
+<!-- 업로드 게시판 수정 -->
+<update id="updateUpload" parameterType="com.javalec.ex.model.UploadVO" >
+		update upload set title=#{title}, content=#{content}, notice=#{notice} where uploadno=#{uploadno}
+</update>
+
+<!-- 업로드 파일 수정 -->
+<update id="updateUploadFile" parameterType="com.javalec.ex.model.UploadFileVO">
+		update uploadfile set savedfilename=#{savedfilename}, 
+		userfilename=#{userfilename} where uploadfileno=#{uploadfileno} 
+</update>
+
+<!-- 업로드 게시판 삭제 -->
+<delete id="deleteUpload" parameterType="int">
+		delete from upload where uploadno = #{uploadno}
+</delete>
+
+<!-- 업로드 파일 삭제 -->
+<delete id="deleteUploadFile" parameterType="int">
+		delete from uploadfile where uploadfileno = #{uploadfileno}
+</delete>
+
+<!-- 댓글 등록 -->
+<insert id="insertComment">
+		insert into uploadcomment(no, id, content, uploadno)
+		values(uploadcomment_seq.nextval, #{membervo.id},  #{content}, #{uploadno})
+</insert>
+
+<!-- 댓글 갯수 -->
+<select id="commentCount" parameterType="int" resultType="int">
+		select count(*) from uploadcomment where uploadno = #{uploadno}
+</select>
+
+<!-- 댓글 목록 -->
+<select id="commentList" parameterType="java.util.HashMap" resultType="com.javalec.ex.model.UploadComment" resultMap="UploadComment">
+			<include refid="pagingHeader"></include>
+			select * from uploadcomment c join member m on c.id = m.id where uploadno=#{uploadno} order by no desc
+			<include refid="pagingFooter"></include>	
+</select>
+
+<!-- 댓글 수정 -->
+<update id="updateComment" parameterType="com.javalec.ex.model.UploadComment" >
+		update uploadcomment set content=#{content} where no=#{no}
+</update>
+
+<!-- 댓글 삭제 -->
+<delete id="deleteComment" parameterType="com.javalec.ex.model.UploadComment">
+		delete from uploadcomment where no=#{no}
+</delete>
+<!-- 검색조건 sql조각 -->
+<sql id="search">
+    <choose>
+    	<when test="searchOption == 'all'">
+    	</when>
+        <!-- 검색 옵션이 제목+내용일 경우 -->
+        <when test="searchOption == 'comb'">
+            WHERE title like '%'||#{item}||'%'
+            OR content like '%'||#{item}||'%'
+        </when>
+        <!-- 검색 옵션이 제목 또는 내용 또는 글쓴이일 경우 -->
+        <otherwise>
+            WHERE ${searchOption} like '%'||#{item}||'%'
+        </otherwise>
+    </choose>
+</sql>
+
+<!-- 페이징 윗부분 -->
+<sql id="pagingHeader">
+<![CDATA[
+	select * from (
+		select rownum rnum, T.* from (
+]]>
+</sql>
+
+<!-- 페이징 뒷부분 -->
+<sql id="pagingFooter">
+<![CDATA[
+		) T where rownum <= #{endNo}
+	) where rnum >= #{startNo}
+]]>
+</sql>
+</mapper>
