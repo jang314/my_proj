@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+table.guestbook {
+	width:90%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔스퀘어;
+    line-height: 1.5;
+    border: 2px solid black;
+
+    margin-top: 30px;
+}
+table.guestbookw {
+	width:90%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔스퀘어;
+    line-height: 1.5;
+    border: 0px; solid #ccc;
+    margin-top: 30px;
+}
+
+table.guestbookw .thead{
+	font-weignt: bold;
+	color: black;
+	font-family: 배달의민족 도현;
+	font-size: 37px;
+}
+
+table.guestbook .theadw{
+	font-weignt: bold;
+	color: black;
+	font-family: 나눔스퀘어 ExtraBold;
+	font-size: 30px;
+}
+table.guestbook .boardTitle {
+	color: white;
+	font-weight: bold
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    background: #212121;
+    border-bottom: 1px solid #ccc;
+}
+table.guestbook .notice{
+	background: #EAEAEA;
+	width: 350px;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+table.guestbook .main{
+	font-family: 나눔스퀘어;
+	width: 350px;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+.txtform{
+	border: 0;
+	font-family: 나눔스퀘어;
+	font-size:13px;
+	}
+
+.button {
+	font-family: 나눔스퀘어;
+	color: black; 
+	background: white;
+    margin: 0;
+    border-color:black;
+    border: 0.5;
+    font-size: 13px;
+    position: relative;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.sub{
+	border: 1px solid #ccc;
+	font-family:나눔스퀘어;
+	    vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+}
+
+.content{
+		font-family:나눔스퀘어;
+	    vertical-align: middle;
+        border-bottom: 1px solid #ccc;
+        color: #353535;
+        line-height: 1.5;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+}
+
+.search_btn {
+	font-family: 나눔스퀘어;
+	color: black; 
+	background: white;
+    margin: 0;
+    border-color:black;
+    border: 0.5;
+    font-size: 13px;
+    position: relative;
+    width: 60px;
+    height: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.btn{
+	border:0;
+	font-family: 나눔스퀘어;
+	color: white;
+	font-size: 13px;
+	background: black;
+	width: 60px;
+    height: 24px;
+        box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+	cursor: pointer;
+}
+.pg_btn{
+		border:0;
+	font-family: 나눔스퀘어;
+	color: black;
+	font-size: 13px;
+	background: none;
+	width: 40px;
+    height: 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+}
+.pg_btn[disabled='disabled']{cursor:default; color:black; text-decoration: underline; font-weight: bold;font-size: 15px;}
+

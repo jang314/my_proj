@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javalec.mybatis.albumboardcomment">
+<!-- 댓글 테이블에 새 댓글을 저장한다. -->
+	<insert id="insertAlbumComment" parameterType="com.javalec.VO.AlbumboardCommentVO">
+		insert into albumboardcomment (idx, ref, id, name, content, img)
+		values (albumboardcomment_idx_seq.nextval, #{ref}, #{id},#{name}, #{content}, #{img})
+	</insert>
+		<select id="AlbumCommentList" parameterType="int" resultType="com.javalec.VO.AlbumboardCommentVO">
+		select * from albumboardcomment where ref = #{idx} order by idx desc
+	</select>
+		<update id="updateAlbumComment" parameterType="com.javalec.VO.AlbumboardCommentVO">
+		update albumboardcomment set content=#{content}, img=#{img} where idx=#{idx}
+	</update>
+		<delete id="deleteAlbumComment" parameterType="int">
+		delete from albumboardcomment where idx=#{idx}
+	</delete>
+</mapper>

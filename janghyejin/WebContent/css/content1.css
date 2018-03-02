@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+
+table.index-album{
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    margin : 20px 10px;
+}
+
+.box_th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border: 0px solid #ccc;
+    font-family: 나눔바른고딕;
+}
+.box_td {
+    width: 350px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right:  30px ;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+table.member{
+	width:90%;
+    text-align: left;
+    font-family: 나눔스퀘어;
+    border: 0px solid #ccc;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.thead{
+	color: #353535;
+	font-family: 나눔스퀘어;
+	font-size: 37px;
+	text-align: left;
+}
+
+.hm{
+	width: 300px;
+    padding: 10px;
+    font-family: 나눔스퀘어;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #efefef;
+}
+
+
+.content{
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.btn{
+	border:0;
+	font-family: 나눔스퀘어;
+	color: white;
+	font-size: 13px;
+	background: black;
+	width: 80px;
+    height: 24px;
+        box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+	cursor: pointer;
+}
+
+table.login{
+	width:30%;
+    text-align: left;
+    font-family: 나눔스퀘어;
+    border: 1px solid #ccc;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+  	margin-top: 10%;
+  	margin-bottom: 10%;
+}
+.lhead{
+	color: #353535;
+	font-family: 나눔스퀘어;
+	font-size: 25px;
+	text-align: center;
+}
+
+.ltr{
+	text-align: left;
+	padding-left: 10px;
+}
+
+.ltd{
+	width:120px;
+	color: #353535;
+	font-family: 나눔스퀘어;
+	font-size: 16px;
+	text-align: right;
+	
+}
+
+.login_box{
+	height: 25px;
+	width:50%;
+	margin-top: 5px;
+	margin-left:0px;
+	padding:0;
+	position: relative;
+}
+
+.lbutton{
+	font-family: 나눔스퀘어;
+	color: white; 
+	background: black;
+    margin-top: 5px;
+    border-color:black;
+    border: 0.5;
+    font-size: 13px;
+    position: relative;
+    width: 65%;
+    height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.la:link {text-decoration: none; size:10px; color: black;} 
+.la:visited {text-decoration: none;size:10px; color: black;}
+.la:active {text-decoration: none; size:10px;color: black;}
+.la:hover {text-decoration: underline;  size:10px; color: gray; }
+
+      @media ( max-width: 500px ) {
+        .member {
+          width: auto;
+          float: none;
+        }
+      }
+

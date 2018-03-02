@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javalec.mybatis.albumboard">
+
+<insert id="albumInsert" parameterType="com.javalec.VO.AlbumboardVO">
+	insert into albumboard(idx, id, name, title, content, img) values(albumboard_idx_seq.nextval, #{id}, #{name}, #{title}, #{content} ,#{img})
+</insert> 
+
+<select id="albumCount" resultType="int">
+	select count(*) from albumboard
+</select>
+
+<select id="albumList" parameterType="java.util.HashMap" resultType="com.javalec.VO.AlbumboardVO">
+	<![CDATA[
+		select * from (
+			select rownum rnum, T.* from (
+				select * from albumboard order by idx desc
+			) T where rownum <= #{endNo}
+		) where rnum >= #{startNo}
+	]]>
+</select>
+
+<update id="hit" parameterType="int">
+		update albumboard set hit = hit + 1 where idx=#{idx}
+</update>
+
+<select id="albumByIdx" parameterType="int" resultType="com.javalec.VO.AlbumboardVO">
+	select * from albumboard where idx = #{idx}
+</select>
+
+<update id="updateAlbum" parameterType="com.javalec.VO.AlbumboardVO">
+	update albumboard set title = #{title}, img=#{img}, content=#{content} where idx=#{idx}
+</update>
+
+<delete id="deleteAlbum" parameterType="int">
+	delete from albumboard where idx = #{idx}
+</delete>
+
+<select id="albumHit" parameterType="java.util.HashMap" resultType="com.javalec.VO.AlbumboardVO">
+	<![CDATA[
+		select * from (
+			select rownum rnum, T.* from (
+				select * from albumboard order by hit desc
+			) T where rownum <= #{endNo}
+		) where rnum >= #{startNo}
+	]]>
+</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

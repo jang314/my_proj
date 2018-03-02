@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+table.freeboard {
+	width:90%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔스퀘어;
+    line-height: 1.5;
+    border: 0px solid #ccc;
+}
+
+
+
+table.freeboardw .theadw{
+	font-weignt: bold;
+	color: black;
+	font-family: 배달의민족 도현;
+	font-size: 30px;
+}
+
+table.freeboard .thead{
+	font-weignt: bold;
+	color: black;
+	font-family: 배달의민족 도현;
+	font-size: 37px;
+}
+
+.main{
+	font-family: 나눔스퀘어;
+	width: 90%;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+
+
