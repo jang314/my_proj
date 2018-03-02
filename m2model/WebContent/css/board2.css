@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+/*등록, 삭제, 수정 폼*/
+table.free-form{
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    margin: 100px 150px;
+    margin-top: 100px;
+}
+
+table.album_t{
+	float:left;
+	border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 2px solid #EAEAEA;
+    border-bottom: 3px solid #EAEAEA;
+  	margin : 50px 10px ;
+  	margin-left:55px;
+  	margin-right: 10px;
+  	font-family: 나눔스퀘어;
+}
+
+table.guest_t{
+	border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 0px solid #ccc;
+ 	margin : 20px 10px;
+ 	margin-left:200px;
+}
+
+.guest_head{
+	height: 50px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-family: 배달의민족 한나는 열한살;
+	padding-left: 5px;
+	border-top: 0px;
+	border-bottom: 1px solid #ccc;
+}
+
+.guest_th {
+    width: 147px;
+    padding: 10px;
+    text-align: right;
+    font-weight: bold;
+    vertical-align: top;
+    color: #153d73;
+    border-bottom: 1px solid #ccc;
+    border-left: 5px solid #369;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+}
+.guest_td {
+    width: 349px;
+    padding: 10px;
+    vertical-align: top;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.album_tr{
+	text-align: center;
+	font-family: 나눔바른고딕;
+}
+.imgView{
+	width: auto; height: auto;
+    max-width: 500px;
+    max-height: 500px;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 100px;
+}
+
+table. no_bord{
+	width:1000px;
+	border: 1px;
+	vertical-align: bottom;
+}
+
+.thead{
+	width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #efefef;
+    font-family: 나눔바른고딕;
+}
+
+.head{
+	height: 50px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-family: 배달의민족 한나는 열한살;
+	padding-left: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.input-form{
+	width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    font-family: 나눔바른고딕;
+}
+
+/* 게시판 리스트*/
+table.freeboard {
+	width:90%;
+	margin-top: 100px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔스퀘어;
+    line-height: 1.5;
+    border: 0px solid #ccc;
+}
+
+ .notice{
+	background: #EAEAEA;
+	width: 350px;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+.listTitle {
+	color: white;
+	font-weight: bold
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    background: #353535;
+    border-bottom: 1px solid #ccc;
+}
+
+.boardTitle{
+	height: 50px;
+	margin-bottom: 20px;
+	font-size: 30px;
+	font-family: 배달의민족 한나는 열한살;
+	padding-left: 5px;
+}
+
+.line{
+	font-family: 나눔스퀘어;
+	width: 90%;
+    padding: 10px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 앨범 리스트 */
+
+
+.album-td{
+	width: 250px;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.album{
+	width: 300px;
+	height: 300px;
+	padding: 10px 10px 10px 10px;
+}
+
+
+
+
+
+.button {
+	font-family: 나눔스퀘어;
+	color: black; 
+	background: white;
+    margin: 0;
+    border-color:black;
+    border: 0.5;
+    font-size: 13px;
+    position: relative;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.btn{
+	border:0;
+	font-family: 나눔스퀘어;
+	color: white;
+	font-size: 13px;
+	background: black;
+	width: 40px;
+    height: 24px;
+        box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+	cursor: pointer;
+}
+
+.pg_btn{
+		border:0;
+	font-family: 나눔스퀘어;
+	color: black;
+	font-size: 13px;
+	background: none;
+	width: 40px;
+    height: 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+}
+.pg_btn[disabled='disabled']{cursor:default; color:black; text-decoration: underline; font-weight: bold;font-size: 15px;}
+
+.al:link {text-decoration: none; color: black;} 
+.al:visited {text-decoration: none; color: black;}
+.al:active {text-decoration: none; color: black;}
+.al:hover {text-decoration: underline; color: gray; }
+
+/* 댓글 폼*/
+table.comment{
+	width:80%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 나눔바른고딕;
+    line-height: 1.5;
+    border: 0px solid #ccc;
+}
+
+.albumComment{
+	width: auto; height: auto;
+    max-width: 100px;
+    max-height: 100px;
+}
